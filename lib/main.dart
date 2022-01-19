@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
+import 'package:http/http.dart' as http;
 
 void main() => runApp(const MyApp());
 
@@ -9,7 +10,6 @@ class MyApp extends StatefulWidget {
   @override
   _MyAppState createState() => _MyAppState();
 }
-
 
 class _MyAppState extends State<MyApp> {
   @override
@@ -43,10 +43,16 @@ class _MyAppState extends State<MyApp> {
           ),
           centerTitle: true,
           backgroundColor: Color(0xfff59a3b),
-          elevation: 3.0,
           toolbarHeight: 70,
           leading: IconButton(onPressed: () {}, icon: const Icon(Icons.arrow_back)),
           iconTheme: IconThemeData(color: Colors.white),
+          bottom: PreferredSize(
+            child: Container(
+              color: Color(0xff744700),
+              height: 6.0,
+            ),
+            preferredSize: Size.fromHeight(6.0),
+          ),
         ),
         
         body: Container(
